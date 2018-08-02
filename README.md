@@ -1,27 +1,154 @@
-# HotelClient
+# Julio's BnB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+- This app is a hotel booking app.
 
-## Development server
+## User Stories
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+  **404:** As an user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault
+  
+  **500:** As an user I can see a 500 page if I try to reach a page that does exist so that I know it's not my fault
+  
+  **See Hotel Info:** As a user I can see the hotels home page
+  
+  **See Apartments:** As a user I can see all the apartments the hotel has to offer with thier amenities and common amenities 
+  
+  **See Activites:** As a user I can see all the activites offered by the hotel
+  
+  **Book A Reservation:** As a user I can book a stay even as an anonymous-user
 
-## Code scaffolding
+  **See Payment Confirmation (Fake):** As a user I can see that the payment for my booking went through
+  
+  **Manage Booked Reservation:** As a user I can see my previously booked reservation 
+  
+  **Cancel Reservation:** As a user I can cancel a booked reservation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  **Burger Menu Button:** As a user I can see all the pages I can navagate to
+ 
+  **Quick Booking Feature:** As a user I can press on the Book Now button on the bootom of my screeen to navigate to the booking page
 
-## Build
+## Backlog
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+  **Sign Up:** As an anon-user I can sign up on the platform so that I can join the rewards program
+  
+  **Log In:** As a user I can login to the platform so that I can start see all my reservations
 
-## Running unit tests
+  **Logout:** As a user I can logout from the platform so I can be an anonymous-user 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  **Send Confirmation Email:** As a user I would like to receive an email after booking a stay
 
-## Running end-to-end tests
+  **Payment System:** As a user I want to be able to pay for my stay
+  
+# Client
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Routes
 
-## Further help
+  - / - Homepage
+  - /apartments - apartment list
+  - /activites - activites list
+  - /booknow - Booknow form
+  - /booknow/payment - Payment detail 
+  - /reservation - reservation form
+  - /reservation/:id - reservation details
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  ### Backlog
+
+  - /auth/signup - Signup form
+  - /auth/login - Login form
+  - /profile/:id
+  
+
+## Services
+
+- Auth Service
+  - auth.login(user)
+  - auth.signup(user)
+  - auth.logout()
+  - auth.me()
+- Apartments Service
+  - apartments.listAll()
+- Reservations Service
+  - reservations.createOne() 
+  - reservations.detail(id) 
+  - reservations.confirmPay(id)
+    
+
+## Pages
+
+- 404 Page
+- 500 Page
+- Home Page
+- Apartments Page
+- Apctivites Page
+- Booking Page
+- Booking Confirmation Page
+- Manage Booking Page
+- Manage Booking Detail Page
+
+- Sign Up Page
+- Log in Page
+- Profile Page
+- Your Reservations Page
+
+## Components
+
+- Navbar component
+- Apartment Card component
+- Book Now compomnent
+
+## IO
+
+- Apartments List Page inputs apartments Apartment Card component: Display all restaurants in a list
+- Login/Sign up form outputs the form to the parent component
+
+## Guards
+
+- if logged in cannot access login/signup page
+- if not logged in cannot access profile page
+- if not logged in cannot access your reservations page
+
+# Server
+
+## Models
+
+User model
+
+```
+
+firstName: string // required
+lastName: string // required
+email: string // required + unique
+
+```
+Reservations model
+
+```
+startdate: string // required
+enddate: string // required
+apartment: objectid // required
+totalPrice
+user
+status
+reservation code
+
+```
+Apartments model
+
+```
+name: string // required
+rooms: string // required
+capacity: string // required
+price: number // required
+
+```
+
+## API Endpoints/Backend Routes
+
+  - GET /apartments
+  - POST /reservations
+  - GET /reservations/:id
+  - PUT /reservations/:id (Pay)
+
+  - GET /auth/me
+  - POST /auth/signup
+  - POST /auth/login
+  - POST /auth/me
