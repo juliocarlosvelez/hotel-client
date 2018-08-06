@@ -1,3 +1,21 @@
+/* ---- reset ---- */
+
+html {
+    box-sizing: border-box;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    font-family: Avenir, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+  
+/* ---- layout ---- */
+
 .home-img {
     margin: 0;
     width: 100%;
@@ -5,8 +23,7 @@
 
 .box-text {
     margin: 15px;
-    font-family: Avenir, Helvetica, sans-serif;
     font-size: 20px;
-    color: rgb(43, 43, 43);
+    color: rgb(56, 56, 56);
 }
 

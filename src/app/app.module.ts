@@ -9,6 +9,7 @@ import { ApartmentsPageComponent } from './pages/apartments-page/apartments-page
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
+  { path: 'apartments', component: ApartmentsPageComponent },
   { path: '**', component: NotfoundPageComponent }
 ];
 

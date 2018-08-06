@@ -68,7 +68,7 @@ header .nav-bar{
 
 .footer ul h3{
     margin: 0;
-    padding: 10px 15px;
+    padding: 10px;
 }
 
 .footer ul li{
@@ -76,7 +76,7 @@ header .nav-bar{
 }
 
 .box-text {
-    padding: 0px 15px 10px;
+    padding: 0px 10px 10px;
 }
 
 .nav-links a p{
