@@ -1,13 +1,11 @@
 <header>
     <nav class="nav-bar contain-padding">
-      <div class="nav-logo">
-        <img [routerLink]="['/']" class="logo-img" src="/assets/baby.png" alt="logo">
-      </div>
+      <img [routerLink]="['/']" class="logo-img" src="/assets/baby.png" alt="logo">
       <div class="nav-links">
-        <a [routerLink]="['/']"> Apartments </a>
-        <a [routerLink]="['/']"> Activites </a>
-        <a [routerLink]="['/']"> Book Now </a>
-        <a [routerLink]="['/']"> Manage </a>
+        <a [routerLink]="['/apartments']"> Apartments </a>
+        <a [routerLink]="['/activites']"> Activites </a>
+        <a [routerLink]="['/book-now']"> Book Now </a>
+        <a [routerLink]="['/manage-booking']"> <p>Manage</p> </a>
       </div>
     </nav>
 </header>
