@@ -1,0 +1,46 @@
+/* ---- reset ---- */
+
+html {
+    box-sizing: border-box;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    font-family: Avenir, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+  
+/* ---- layout ---- */
+.contain{
+    margin: 0 10px;
+    color: rgb(56, 56, 56);
+}
+
+.activites-header{
+    text-decoration: underline;
+}
+
+.details{
+    display: inline;
+}
+.activites-card img{
+    width: 40%;
+    float: left;
+    margin: 0 5px 0 0;
+}
+.activites-card{
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    background-color: rgb(243, 243, 243);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    margin: 0 0 10px 0;
+    padding: 10px;
+}
+
+.contain h3{
+    margin: 20px 0 0 10px;
+}
