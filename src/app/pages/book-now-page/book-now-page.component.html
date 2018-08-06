@@ -1,3 +1,30 @@
-<p>
-  book-now-page works!
-</p>
+<div class="new-flight-input">
+      <form class="form contain">
+          <label for="">First Name</label>
+          <input type="text" placeholder="First Name">
+          <label for="">Last Name</label>
+          <input type="text" placeholder="Last Name">
+          <label for="">Email</label>
+          <input type="email" placeholder="Email">
+          <div class="side-by-side">
+            <div>
+              <label for="">Check-in</label>
+              <input type="date" class="date-in"  placeholder="Check-in?">
+            </div>
+            <div>
+              <label for="">Check-out</label>
+              <input type="date" class="date-in"  placeholder="Check-out">
+            </div>
+          </div>
+          <label for="">Apartment</label>
+          <input list="Apartments" placeholder="Apartment">
+          <datalist id="Apartments">
+            <option value="Apt#1">
+            <option value="Apt#2">
+            <option value="Apt#3">
+            <option value="Apt#4">
+            <option value="Apt#5">
+          </datalist>
+          <button>BOOK</button>
+      </form>
+  </div>

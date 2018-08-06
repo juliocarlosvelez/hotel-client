@@ -1,0 +1,75 @@
+/* ---- reset ---- */
+
+html {
+    box-sizing: border-box;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    font-family: Avenir, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+  
+/* ---- layout ---- */
+.contain{
+    margin: 0 10px;
+    color: rgb(56, 56, 56);
+}
+
+.form{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+  
+.form input,
+.form button {
+box-sizing: border-box;
+width: 100%;
+border: 1px solid #545454;
+border-radius: 4px;
+padding: 10px;
+font-size: 15px;
+margin: 8px 0;
+max-width: 333px;
+}
+
+.form button {
+background: #58ce58;
+color: white;
+border: 1px solid #58ce58;
+width: 40%;
+}
+
+.validation {
+background: transparent;
+box-sizing: border-box;
+color: red;
+margin: 10px auto;
+padding: 10px;
+width: 100%;
+max-width: 333px;
+list-style: none;
+text-align: center;
+}
+
+.form label{
+    font-size: 15px;
+}
+
+.form div input {
+    margin: 0;
+}
+
+.form .side-by-side{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.side-by-side div{
+    width: 48%;
+}
