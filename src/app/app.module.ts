@@ -8,6 +8,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ApartmentsPageComponent } from './pages/apartments-page/apartments-page.component';
 import { ActivitesPageComponent } from './pages/activites-page/activites-page.component';
 import { BookNowPageComponent } from './pages/book-now-page/book-now-page.component';
+import { ManageReservationPageComponent } from './pages/manage-reservation-page/manage-reservation-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
     ApartmentsPageComponent,
     ActivitesPageComponent,
     BookNowPageComponent,
+    ManageReservationPageComponent,
   ],
   imports: [
     BrowserModule,
