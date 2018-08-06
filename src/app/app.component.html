@@ -1,21 +1,30 @@
-<header id="site-header">
-  <div class="container">
-
-    <h1 class="site-title"><a [routerLink]="['/']"> HOME </a></h1>
-
-    <nav class="site-nav">
-      HOME
+<header>
+    <nav class="nav-bar contain-padding">
+      <div class="nav-logo">
+        <img [routerLink]="['/']" class="logo-img" src="/assets/baby.png" alt="logo">
+      </div>
+      <div class="nav-links">
+        <a [routerLink]="['/']"> Apartments </a>
+        <a [routerLink]="['/']"> Activites </a>
+        <a [routerLink]="['/']"> Booking </a>
+        <a [routerLink]="['/']"> Manage </a>
+      </div>
     </nav>
-
-  </div>
 </header>
 
-<div id="site-main" class="container">
+<div>
   <router-outlet></router-outlet>
 </div>
 
-<footer id="site-footer">
-  <div class="container">
-    nice footer
+<footer>
+  <div class="footer">
+    <ul>
+      <h3>Contact Info</h3>
+      <li class="box-text" >Phone: +1-352-286-8018</li>
+      <li class="box-text" >Email: juliosbnb@gmail.com</li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div>
 </footer>
