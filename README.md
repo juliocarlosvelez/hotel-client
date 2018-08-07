@@ -67,9 +67,9 @@
 - Apartments Service
   - apartments.listAll()
 - Reservations Service
-  - reservations.createOne() 
-  - reservations.detail(id) 
-  - reservations.confirmPay(id)
+  - bookings.createOne() 
+  - bookings.detail(id) 
+  - bookings.confirmPay(id)
     
 
 ## Pages
@@ -145,10 +145,10 @@ price: number // required
   <!-- apartments -->
   - GET /apartments
   <!-- book now -->
-  - POST /reservations
+  - POST /bookings
   <!-- manage booking -->
-  - GET /reservations/:id
-  - PUT /reservations/:id (Pay)
+  - GET /bookings/:id
+  - PUT /bookings/:id (Pay)
   <!-- login sign -->
   - GET /auth/me
   - POST /auth/signup

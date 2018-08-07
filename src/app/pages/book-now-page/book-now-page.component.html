@@ -1,45 +1,31 @@
-<!-- <div class="new-flight-input">
-    <form class="form contain" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
-        <label for="">First Name</label>
-        <input type="text" placeholder="First Name">
-        <label for="">Last Name</label>
-        <input type="text" placeholder="Last Name">
-        <label for="">Email</label>
-        <input type="email" placeholder="Email">
-        <label class="top-space" for="apartment-select">Apartment</label>
-        <select id="apartment-select" >
-          <option value="">Choose your apartment</option>
-          <option value="apartment 1">Apartment 1</option>
-          <option value="apartment 2">Apartment 2</option>
-          <option value="apartment 3">Apartment 3</option>
-          <option value="apartment 4">Apartment 4</option>
-          <option value="apartment 5">Apartment 5</option>
-        </select>
-        <div class="side-by-side">
-          <div  [ngClass]="{'has-error': feedbackEnabled && checkinRequired.errors}">
-            <label for="">Check-in</label>
-            <input type="date" class="date-in"  placeholder="Check-in?">
-            <div *ngIf="feedbackEnabled && checkinRequired.errors">
-              <p *ngIf="checkinRequired.errors.required" class="validation">date required</p>
-              <p *ngIf="checkinRequired.errors.minlength" class="validation">date is not valid</p>
-            </div>
-          </div>
-          <div  [ngClass]="{'has-error': feedbackEnabled && checkoutRequired.errors}">
-            <label for="">Check-out</label>
-            <input type="date" class="date-in"  placeholder="Check-out" [(ngModel)]="username" #usernameField="ngModel" required minlength="6" [disabled]="processing">
-            <div *ngIf="feedbackEnabled && checkoutRequired.errors">
-              <p *ngIf="checkoutRequired.errors.required" class="validation">date required</p>
-              <p *ngIf="checkoutRequired.errors.minlength" class="validation">date is not valid</p>
-            </div>
-          </div>
-        </div>
-        
-        <h2>Price: $000.00</h2>
-        <div class="field submit">
-            <button type="submit" [disabled]="processing">PAY NOW</button>
-            <div *ngIf="feedbackEnabled && form.invalid">
-              <p class="validation">there are errors in the form, please review the fields</p>
-            </div>
-          </div>
-    </form>
-</div> -->
+<div class="new-booking-input">
+  <form class="form contain" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate>
+    <label for="">First Name</label>
+    <input type="text" placeholder="First Name" name="firstName" [(ngModel)]="booking.firstName" #firstNameField="ngModel" required>
+    <label for="">Last Name</label>
+    <input type="text" placeholder="Last Name" name="lastName" [(ngModel)]="booking.lastName" #lastNameField="ngModel" required>
+    <label for="">Email</label>
+    <input type="email" placeholder="email" name="email" [(ngModel)]="booking.email" #emailField="ngModel" required>
+    <label class="top-space" for="apartment-select">Apartment</label>
+    <select id="apartment-select" [(ngModel)]="booking.apartment" #apartmentField="ngModel" required>
+      <option value="" name="apartment">Choose your apartment</option>
+      <option value="apartment 1">Apartment 1</option>
+      <option value="apartment 2">Apartment 2</option>
+      <option value="apartment 3">Apartment 3</option>
+      <option value="apartment 4">Apartment 4</option>
+      <option value="apartment 5">Apartment 5</option>
+    </select>
+    <div class="side-by-side">
+      <div>
+        <label for="">Check-in</label>
+        <input type="date" class="date" name="checkIn" placeholder="Check-in" [(ngModel)]="booking.checkin" #checkinField="ngModel" required>
+      </div>
+      <div>
+        <label for="">Check-out</label>
+        <input type="date" class="date" name="checkOut" placeholder="Check-out" [(ngModel)]="booking.checkout" #checkoutField="ngModel" required>
+      </div>
+      <h2>Price: $000.00</h2>
+    </div>
+    <button type="submit">PAY NOW</button>
+  </form>
+</div>

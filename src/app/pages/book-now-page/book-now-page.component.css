@@ -86,6 +86,10 @@ margin: 8px 0;
 max-width: 333px;
 }
 
-.new-flight-input .form .top-space{
+.new-booking-input .form .top-space{
     margin: 10px 0;
+}
+
+form .is-processing {
+	opacity: 0.5;
 }
