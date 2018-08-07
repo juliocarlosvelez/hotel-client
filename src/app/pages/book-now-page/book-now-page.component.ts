@@ -17,6 +17,7 @@ export class BookNowPageComponent implements OnInit {
   apartment: String;
   checkIn: Date;
   checkOut: Date;
+  booking: any;
 
   constructor(private bookingService: BookingService) { }
 
