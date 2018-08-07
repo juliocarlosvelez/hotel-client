@@ -23,6 +23,7 @@ body {
 .form{
     margin-top: 15px;
     margin-bottom: 15px;
+    text-align: center;
 }
   
 .form input,
@@ -42,7 +43,6 @@ background: #58ce58;
 color: white;
 border: 1px solid #58ce58;
 width: 40%;
-margin: 0;
 }
 
 .validation {
@@ -59,33 +59,4 @@ text-align: center;
 
 .form label{
     font-size: 15px;
-}
-
-.form div input {
-    margin: 0;
-}
-
-.form .side-by-side{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.side-by-side div{
-    width: 48%;
-}
-
-.form select {
-box-sizing: border-box;
-width: 100%;
-border: 1px solid #545454;
-border-radius: 4px;
-padding: 10px;
-font-size: 15px;
-margin: 8px 0;
-max-width: 333px;
-}
-
-.new-flight-input .form .top-space{
-    margin: 10px 0;
 }

@@ -142,12 +142,14 @@ price: number // required
 ```
 
 ## API Endpoints/Backend Routes
-
+  <!-- apartments -->
   - GET /apartments
+  <!-- book now -->
   - POST /reservations
+  <!-- manage booking -->
   - GET /reservations/:id
   - PUT /reservations/:id (Pay)
-
+  <!-- login sign -->
   - GET /auth/me
   - POST /auth/signup
   - POST /auth/login

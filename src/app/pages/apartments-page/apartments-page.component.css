@@ -51,10 +51,24 @@ body {
     font-size: 10px;
     border-radius: 8px;
     padding: 5px;
-    background-color:rgb(115, 190, 125);
+    background-color:rgb(85, 153, 94);
     box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    color: white;
 }
 
 .card-text h3{
     margin: 0;
+}
+
+.to-uppercase{
+    text-transform: capitalize;
+    margin: 0;
+}
+
+div h2{
+    margin: 0; 
+}
+
+.apt-header{
+    margin: 5px 0;
 }

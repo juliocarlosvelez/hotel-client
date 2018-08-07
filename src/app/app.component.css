@@ -84,3 +84,7 @@ header .nav-bar{
     margin: 0;
     display: inline-block;
 }
+
+.contain-page{
+    min-height: calc(100vh - 120px);
+  }
