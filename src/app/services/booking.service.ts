@@ -11,19 +11,11 @@ export class BookingService {
 
   constructor(private httpClient: HttpClient) { }
 
-  createBooking(firstName: String, lastName: String, email: String, apartment: String, checkIn: Date, checkOut: Date): Promise<any> {
+  createBooking(booking: Object): Promise<any> {
     const options = {
       withCredentials: true
     };
-    const data = {
-      firstName,
-      lastName,
-      email,
-      apartment,
-      checkIn,
-      checkOut
-    };
-    return this.httpClient.post(`${this.baseUrl}`, data , options)
+    return this.httpClient.post(`${this.baseUrl}`, booking , options)
       .toPromise();
   }
 

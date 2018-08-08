@@ -28,33 +28,33 @@ body {
   
 .form input,
 .form button {
-box-sizing: border-box;
-width: 100%;
-border: 1px solid #545454;
-border-radius: 4px;
-padding: 10px;
-font-size: 15px;
-margin: 8px 0;
-max-width: 333px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #545454;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 15px;
+    margin: 8px 0;
+    max-width: 333px;
 }
 
 .form button {
-background: #58ce58;
-color: white;
-border: 1px solid #58ce58;
-width: 40%;
+    background: #58ce58;
+    color: white;
+    border: 1px solid #58ce58;
+    width: 40%;
 }
 
 .validation {
-background: transparent;
-box-sizing: border-box;
-color: red;
-margin: 10px auto;
-padding: 10px;
-width: 100%;
-max-width: 333px;
-list-style: none;
-text-align: center;
+    background: transparent;
+    box-sizing: border-box;
+    color: red;
+    margin: 10px auto;
+    padding: 10px;
+    width: 100%;
+    max-width: 333px;
+    list-style: none;
+    text-align: center;
 }
 
 .form label{

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookingService } from '../../services/booking.service';
+import { ApartmentService } from '../../services/apartment.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-now-page',
@@ -7,25 +9,19 @@ import { BookingService } from '../../services/booking.service';
   styleUrls: ['./book-now-page.component.css']
 })
 export class BookNowPageComponent implements OnInit {
-
   feedbackEnabled = false;
   error = null;
   processing = false;
-  firstName: String;
-  lastName: String;
-  email: String;
-  apartment: String;
-  checkIn: Date;
-  checkOut: Date;
-  booking: any;
+  booking: Object = {};
+  apartments: any;
 
-  constructor(private bookingService: BookingService) { }
+  constructor(private bookingService: BookingService, private router: Router, private apartmentService: ApartmentService) { }
 
   ngOnInit() {
-    // this.bookingService.createBooking()
-    //   .then((result) => {
-    //     this.booking = result;
-    //   });
+    this.apartmentService.getAll()
+    .then((result) => {
+      this.apartments = result;
+    });
   }
 
   submitForm(form) {
@@ -34,14 +30,11 @@ export class BookNowPageComponent implements OnInit {
     this.feedbackEnabled = true;
     if (form.valid) {
       this.processing = true;
-      this.bookingService.createBooking(this.firstName, this.lastName, this.email, this.apartment, this.checkIn, this.checkOut)
+      this.bookingService.createBooking(this.booking)
         .then((result) => {
-          // ... handle result, reset form, etc...
-          // ... navigate with this.router.navigate(['...'])
-          // ... maybe turn this to false if your're staying on the page - this.processing = false;
+          this.router.navigate(['/booking', result._id]);
         })
         .catch((err) => {
-          this.error = err.error.error; // :-)
           this.processing = false;
           this.feedbackEnabled = false;
         });

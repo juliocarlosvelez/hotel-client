@@ -49,8 +49,7 @@ margin: 0;
 background: transparent;
 box-sizing: border-box;
 color: red;
-margin: 10px auto;
-padding: 10px;
+margin: 0;
 width: 100%;
 max-width: 333px;
 list-style: none;
@@ -92,4 +91,34 @@ max-width: 333px;
 
 form .is-processing {
 	opacity: 0.5;
+}
+
+div form div .full {
+    padding: 0; 
+    width: 100%;
+}
+
+div form .button-top {
+    margin-top: 10px;
+}
+
+
+form.is-processing {
+	opacity: 0.5;
+}
+
+form .field.has-error label {
+	color: red;
+}
+
+form .validation {
+	color: red;
+}
+
+form .field.has-error input {
+	border: 1px solid  red;
+}
+
+p.validation {
+    margin: 4px 0;
 }
