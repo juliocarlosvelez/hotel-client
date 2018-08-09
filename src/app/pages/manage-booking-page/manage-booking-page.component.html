@@ -1,9 +1,30 @@
-<div class="new-flight-input">
-    <form class="form contain">
-        <label for="">Confirmation #:</label>
-        <input type="text" placeholder="Code">
-        <label for="">Last Name</label>
-        <input type="text" placeholder="Last Name">
-        <button>GO</button>
+<div class="new-booking-input">
+    <form class="form contain" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+        <div [ngClass]="{'has-error': feedbackEnabled && bookingCodeField.errors}">
+            <label for="">Confirmation #:</label>
+            <input type="text" placeholder="Code" name="bookingCode" [(ngModel)]="booking.bookingCode" #bookingCodeField="ngModel" required [disabled]="processing"/>
+            <div *ngIf="feedbackEnabled && bookingCode.errors">
+                <p *ngIf="bookingCode.errors.required" class="validation">Booking Code required</p>
+            </div>
+        </div>
+        <div [ngClass]="{'has-error': feedbackEnabled && lastNameField.errors}">
+            <label for="">Last Name</label>
+            <input type="text" placeholder="Last Name" name="lastName" [(ngModel)]="booking.lastName" #lastNameField="ngModel" required [disabled]="processing"/>
+            <div *ngIf="feedbackEnabled && lastNameField.errors">
+                <p *ngIf="lastNameField.errors.required" class="validation">Last name required</p>
+            </div>
+        </div>
+        <div class="field submit">
+            <button class="button-top" type="submit" [disabled]="processing">GO</button>
+            <div *ngIf="feedbackEnabled && form.invalid">
+                <p class="validation">there are errors in the form, please review the fields</p>
+            </div>
+        </div>
     </form>
 </div>
+
+
+
+
+
+          

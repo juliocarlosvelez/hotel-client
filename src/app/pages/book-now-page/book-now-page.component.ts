@@ -32,7 +32,7 @@ export class BookNowPageComponent implements OnInit {
       this.processing = true;
       this.bookingService.createBooking(this.booking)
         .then((result) => {
-          this.router.navigate(['/booking', result._id]);
+          this.router.navigate(['book-now/payment-successful']);
         })
         .catch((err) => {
           this.processing = false;
