@@ -3,8 +3,8 @@
         <div [ngClass]="{'has-error': feedbackEnabled && bookingCodeField.errors}">
             <label for="">Confirmation #:</label>
             <input type="text" placeholder="Code" name="bookingCode" [(ngModel)]="booking.bookingCode" #bookingCodeField="ngModel" required [disabled]="processing"/>
-            <div *ngIf="feedbackEnabled && bookingCode.errors">
-                <p *ngIf="bookingCode.errors.required" class="validation">Booking Code required</p>
+            <div *ngIf="feedbackEnabled && bookingCodeField.errors">
+                <p *ngIf="bookingCodeField.errors.required" class="validation">Booking Code required</p>
             </div>
         </div>
         <div [ngClass]="{'has-error': feedbackEnabled && lastNameField.errors}">

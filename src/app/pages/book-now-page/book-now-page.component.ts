@@ -12,7 +12,7 @@ export class BookNowPageComponent implements OnInit {
   feedbackEnabled = false;
   error = null;
   processing = false;
-  booking: Object = {};
+  booking: any;
   apartments: any;
 
   constructor(private bookingService: BookingService, private router: Router, private apartmentService: ApartmentService) { }

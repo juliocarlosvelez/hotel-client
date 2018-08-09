@@ -11,7 +11,7 @@ export class ManageBookingPageComponent implements OnInit {
   feedbackEnabled = false;
   error = null;
   processing = false;
-  booking: Object = {};
+  booking: any;
 
   constructor(private bookingService: BookingService, private router: Router) { }
 
