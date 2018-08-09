@@ -1,99 +1,64 @@
-<!-- <div class="new-booking-input">
-  <form class="form contain" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
-    <label for="">First Name</label>
-    <input type="text" placeholder="First Name" name="firstName" [(ngModel)]="booking.firstName" #firstNameField="ngModel" required [disabled]="processing"/>
-    <label for="">Last Name</label>
-    <input type="text" placeholder="Last Name" name="lastName" [(ngModel)]="booking.lastName" #lastNameField="ngModel" required [disabled]="processing"/>
-    <label for="">Email</label>
-    <input type="email" placeholder="email" name="email" [(ngModel)]="booking.email" #emailField="ngModel" required [disabled]="processing"/>
-    <label class="top-space" for="apartment-select">Apartment</label>
-    <select id="apartment-select" name="apartment" [(ngModel)]="booking.apartment" #apartmentField="ngModel" required [disabled]="processing"/>
-      <option value="">Choose your apartment</option>
-      <option for="">apartment 1</option>
-      <option for="">apartment 2</option>
-      <option for="">apartment 3</option>
-      <option for="">apartment 4</option>
-      <option for="">apartment 5</option>
-    </select>
+<div class="new-booking-input">
+  <form class="form contain" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">  
+    <div [ngClass]="{'has-error': feedbackEnabled && firstNameField.errors}">
+      <label for="">First Name</label>
+      <input type="text" placeholder="First Name" name="firstName" [(ngModel)]="booking.firstName" #firstNameField="ngModel" required [disabled]="processing"/>
+      <div *ngIf="feedbackEnabled && firstNameField.errors">
+        <p *ngIf="firstNameField.errors.required" class="validation">First name required</p>
+      </div>
+    </div>
+    <div [ngClass]="{'has-error': feedbackEnabled && lastNameField.errors}">
+      <label for="">Last Name</label>
+      <input type="text" placeholder="Last Name" name="lastName" [(ngModel)]="booking.lastName" #lastNameField="ngModel" required [disabled]="processing"/>
+      <div *ngIf="feedbackEnabled && lastNameField.errors">
+        <p *ngIf="lastNameField.errors.required" class="validation">Last name required</p>
+      </div>
+    </div>
+    <div [ngClass]="{'has-error': feedbackEnabled && emailField.errors}">
+      <label for="">email</label>
+      <input type="text" placeholder="email" name="email" [(ngModel)]="booking.email" #emailField="ngModel" required [disabled]="processing"/>
+      <div *ngIf="feedbackEnabled && emailField.errors">
+        <p *ngIf="emailField.errors.required" class="validation">email required</p>
+      </div>
+    </div>
+    <div [ngClass]="{'has-error': feedbackEnabled && apartmentField.errors}">
+      <label class="top-space" for="apartment-select">Apartment</label>
+      <select id="apartment-select" name="apartment" [(ngModel)]="booking.apartment" #apartmentField="ngModel" required [disabled]="processing">
+        <option value="">Choose your apartment</option>
+        <option for="">apartment 1</option>
+        <option for="">apartment 2</option>
+        <option for="">apartment 3</option>
+        <option for="">apartment 4</option>
+        <option for="">apartment 5</option>
+      </select>
+      <div *ngIf="feedbackEnabled && apartmentField.errors">
+        <p *ngIf="apartmentField.errors.required" class="validation">apartment required</p>
+      </div>
+    </div>
     <div class="side-by-side">
-      <div>
-        <label for="">Check-in</label>
-        <input type="date" class="date" name="checkIn" placeholder="Check-in" [(ngModel)]="booking.checkIn" #checkinField="ngModel" required [disabled]="processing"/>
-      </div>
-      <div>
-        <label for="">Check-out</label>
-        <input type="date" class="date" name="checkOut" placeholder="Check-out" [(ngModel)]="booking.checkOut" #checkoutField="ngModel" required [disabled]="processing"/>
-      </div>
+        <div [ngClass]="{'has-error': feedbackEnabled && checkinField.errors}">
+          <label for="">Check-in</label>
+          <input type="date" class="date" name="checkIn" placeholder="Check-in" [(ngModel)]="booking.checkIn" #checkinField="ngModel" required [disabled]="processing"/>
+          <div *ngIf="feedbackEnabled && checkinField.errors">
+            <p *ngIf="checkinField.errors.required" class="validation"> Check In required</p>
+          </div>
+        </div>
+        <div [ngClass]="{'has-error': feedbackEnabled && checkoutField.errors}">
+          <label for="">Check-out</label>
+          <input type="date" class="date" name="checkOut" placeholder="Check-out" [(ngModel)]="booking.checkOut" #checkoutField="ngModel" required [disabled]="processing"/>
+          <div *ngIf="feedbackEnabled && checkoutField.errors">
+            <p *ngIf="checkoutField.errors.required" class="validation">checkout required</p>
+          </div>
+        </div>
       <div class="full" *ngFor="let apartment of apartments">
         <h2 *ngIf="apartment.name == booking.apartment">Nightly Price: ${{apartment.nightlyprice}}.00</h2>
       </div>
     </div>
-    <button class="button-top" type="submit" [routerLink]="['/book-now/payment-successful']" >PAY NOW</button>
+    <div class="field submit">
+      <button class="button-top" type="submit" [disabled]="processing">PAY NOW</button>
+      <div *ngIf="feedbackEnabled && form.invalid">
+        <p class="validation">there are errors in the form, please review the fields</p>
+      </div>
+    </div>
   </form>
-</div> -->
-
-
-  <div class="new-booking-input">
-    <form class="form contain" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">  
-      <div [ngClass]="{'has-error': feedbackEnabled && firstNameField.errors}">
-        <label for="">First Name</label>
-        <input type="text" placeholder="First Name" name="firstName" [(ngModel)]="booking.firstName" #firstNameField="ngModel" required [disabled]="processing"/>
-        <div *ngIf="feedbackEnabled && firstNameField.errors">
-          <p *ngIf="firstNameField.errors.required" class="validation">First name required</p>
-        </div>
-      </div>
-      <div [ngClass]="{'has-error': feedbackEnabled && lastNameField.errors}">
-        <label for="">Last Name</label>
-        <input type="text" placeholder="Last Name" name="lastName" [(ngModel)]="booking.lastName" #lastNameField="ngModel" required [disabled]="processing"/>
-        <div *ngIf="feedbackEnabled && lastNameField.errors">
-          <p *ngIf="lastNameField.errors.required" class="validation">Last name required</p>
-        </div>
-      </div>
-      <div [ngClass]="{'has-error': feedbackEnabled && emailField.errors}">
-        <label for="">email</label>
-        <input type="text" placeholder="email" name="email" [(ngModel)]="booking.email" #emailField="ngModel" required [disabled]="processing"/>
-        <div *ngIf="feedbackEnabled && emailField.errors">
-          <p *ngIf="emailField.errors.required" class="validation">email required</p>
-        </div>
-      </div>
-      <div [ngClass]="{'has-error': feedbackEnabled && apartmentField.errors}">
-        <label class="top-space" for="apartment-select">Apartment</label>
-        <select id="apartment-select" name="apartment" [(ngModel)]="booking.apartment" #apartmentField="ngModel" required [disabled]="processing">
-          <option value="">Choose your apartment</option>
-          <option for="">apartment 1</option>
-          <option for="">apartment 2</option>
-          <option for="">apartment 3</option>
-          <option for="">apartment 4</option>
-          <option for="">apartment 5</option>
-        </select>
-        <div *ngIf="feedbackEnabled && apartmentField.errors">
-          <p *ngIf="apartmentField.errors.required" class="validation">apartment required</p>
-        </div>
-      </div>
-      <div class="side-by-side">
-          <div [ngClass]="{'has-error': feedbackEnabled && checkinField.errors}">
-            <label for="">Check-in</label>
-            <input type="date" class="date" name="checkIn" placeholder="Check-in" [(ngModel)]="booking.checkIn" #checkinField="ngModel" required [disabled]="processing"/>
-            <div *ngIf="feedbackEnabled && checkinField.errors">
-              <p *ngIf="checkinField.errors.required" class="validation"> Check In required</p>
-            </div>
-          </div>
-          <div [ngClass]="{'has-error': feedbackEnabled && checkoutField.errors}">
-            <label for="">Check-out</label>
-            <input type="date" class="date" name="checkOut" placeholder="Check-out" [(ngModel)]="booking.checkOut" #checkoutField="ngModel" required [disabled]="processing"/>
-            <div *ngIf="feedbackEnabled && checkoutField.errors">
-              <p *ngIf="checkoutField.errors.required" class="validation">checkout required</p>
-            </div>
-          </div>
-        <div class="full" *ngFor="let apartment of apartments">
-          <h2 *ngIf="apartment.name == booking.apartment">Nightly Price: ${{apartment.nightlyprice}}.00</h2>
-        </div>
-      </div>
-      <div class="field submit">
-        <button class="button-top" type="submit" [disabled]="processing">PAY NOW</button>
-        <div *ngIf="feedbackEnabled && form.invalid">
-          <p class="validation">there are errors in the form, please review the fields</p>
-        </div>
-      </div>
-    </form>
-  </div>
+</div>
