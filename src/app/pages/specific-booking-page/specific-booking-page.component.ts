@@ -11,7 +11,7 @@ import { BookingService } from '../../services/booking.service';
 })
 export class SpecificBookingPageComponent implements OnInit {
 
-  booking: any;
+  booking: any = {};
 
   constructor(private bookingService: BookingService, private route: ActivatedRoute) { }
 
