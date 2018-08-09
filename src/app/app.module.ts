@@ -14,6 +14,7 @@ import { ManageBookingPageComponent } from './pages/manage-booking-page/manage-b
 import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
 import { PaymentSuccessfulPageComponent } from './pages/payment-successful-page/payment-successful-page.component';
 import { PaymentFailedPageComponent } from './pages/payment-failed-page/payment-failed-page.component';
+import { SpecificBookingPageComponent } from './pages/specific-booking-page/specific-booking-page.component';
 
 import { ApartmentService } from './services/apartment.service';
 import { BookingService } from './services/booking.service';
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'book-now/payment-successful', component: PaymentSuccessfulPageComponent },
   { path: 'book-now/payment-failed', component: PaymentFailedPageComponent },
   { path: 'manage-booking', component: ManageBookingPageComponent },
+  { path: 'bookings/:id', component: SpecificBookingPageComponent },
   { path: '**', component: NotfoundPageComponent }
 ];
 
@@ -42,6 +44,7 @@ const routes: Routes = [
     PaymentPageComponent,
     PaymentSuccessfulPageComponent,
     PaymentFailedPageComponent,
+    SpecificBookingPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,4 +19,20 @@ export class BookingService {
       .toPromise();
   }
 
+  findBooking(booking: Object): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.baseUrl}/manage`, booking , options)
+      .toPromise();
+  }
+
+  getOne(id) {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.baseUrl}/${id}`, options)
+      .toPromise();
+  }
+
 }
